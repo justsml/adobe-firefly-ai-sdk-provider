@@ -1,5 +1,4 @@
 import { resolve } from "node:path";
-import preserveDirectives from "rollup-plugin-preserve-directives";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
@@ -9,7 +8,6 @@ export default defineConfig({
 			include: ["src/**/*"],
 			exclude: ["src/**/*.test.*", "src/**/*.spec.*"],
 		}),
-		preserveDirectives(),
 	],
 	build: {
 		lib: {

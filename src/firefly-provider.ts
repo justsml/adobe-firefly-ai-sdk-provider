@@ -70,6 +70,6 @@ export function createAdobeFirefly(
  * ```
  */
 export const firefly = createAdobeFirefly({
-	clientId: process.env.ADOBE_FIREFLY_CLIENT_ID ?? "",
-	clientSecret: process.env.ADOBE_FIREFLY_CLIENT_SECRET ?? "",
+	clientId: process.env["ADOBE_FIREFLY_CLIENT_ID"] ?? "",
+	clientSecret: process.env["ADOBE_FIREFLY_CLIENT_SECRET"] ?? "",
 });

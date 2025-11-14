@@ -62,8 +62,8 @@ export class AdobeFireflyImageModel implements ImageModelV2 {
 		height: number;
 	} {
 		const [widthStr, heightStr] = size.split("x");
-		const width = Number.parseInt(widthStr, 10);
-		const height = Number.parseInt(heightStr, 10);
+		const width = Number.parseInt(`${widthStr}`, 10);
+		const height = Number.parseInt(`${heightStr}`, 10);
 
 		// Validate dimensions are within Adobe Firefly limits
 		const clampedWidth = Math.max(1, Math.min(2688, width || 1024));
