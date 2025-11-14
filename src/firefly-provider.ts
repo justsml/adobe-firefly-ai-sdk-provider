@@ -1,29 +1,29 @@
-import type { ImageModelV2 } from '@ai-sdk/provider';
-import { AdobeFireflyImageModel } from './firefly-image-model';
-import type { AdobeFireflyConfig } from './types';
+import type { ImageModelV2 } from "@ai-sdk/provider";
+import { AdobeFireflyImageModel } from "./firefly-image-model";
+import type { AdobeFireflyConfig } from "./types";
 
 export class AdobeFireflyProvider {
-  constructor(private readonly config: AdobeFireflyConfig) {}
+	constructor(private readonly config: AdobeFireflyConfig) {}
 
-  /**
-   * Creates an Adobe Firefly image model for the specified model ID.
-   *
-   * @param modelId - The Adobe Firefly model ID (e.g., 'firefly-v3')
-   * @returns An Adobe Firefly image model instance compatible with Vercel AI SDK
-   *
-   * @example
-   * ```typescript
-   * const firefly = new AdobeFireflyProvider({
-   *   clientId: process.env.ADOBE_FIREFLY_CLIENT_ID!,
-   *   clientSecret: process.env.ADOBE_FIREFLY_CLIENT_SECRET!,
-   * });
-   *
-   * const model = firefly.image('firefly-v3');
-   * ```
-   */
-  image(modelId = 'firefly-v3'): ImageModelV2 {
-    return new AdobeFireflyImageModel(modelId, this.config);
-  }
+	/**
+	 * Creates an Adobe Firefly image model for the specified model ID.
+	 *
+	 * @param modelId - The Adobe Firefly model ID (e.g., 'firefly-v3')
+	 * @returns An Adobe Firefly image model instance compatible with Vercel AI SDK
+	 *
+	 * @example
+	 * ```typescript
+	 * const firefly = new AdobeFireflyProvider({
+	 *   clientId: process.env.ADOBE_FIREFLY_CLIENT_ID!,
+	 *   clientSecret: process.env.ADOBE_FIREFLY_CLIENT_SECRET!,
+	 * });
+	 *
+	 * const model = firefly.image('firefly-v3');
+	 * ```
+	 */
+	image(modelId = "firefly-v3"): ImageModelV2 {
+		return new AdobeFireflyImageModel(modelId, this.config);
+	}
 }
 
 /**
@@ -52,8 +52,10 @@ export class AdobeFireflyProvider {
  * });
  * ```
  */
-export function createAdobeFirefly(config: AdobeFireflyConfig): AdobeFireflyProvider {
-  return new AdobeFireflyProvider(config);
+export function createAdobeFirefly(
+	config: AdobeFireflyConfig,
+): AdobeFireflyProvider {
+	return new AdobeFireflyProvider(config);
 }
 
 /**
@@ -68,6 +70,6 @@ export function createAdobeFirefly(config: AdobeFireflyConfig): AdobeFireflyProv
  * ```
  */
 export const firefly = createAdobeFirefly({
-  clientId: process.env.ADOBE_FIREFLY_CLIENT_ID ?? '',
-  clientSecret: process.env.ADOBE_FIREFLY_CLIENT_SECRET ?? '',
+	clientId: process.env.ADOBE_FIREFLY_CLIENT_ID ?? "",
+	clientSecret: process.env.ADOBE_FIREFLY_CLIENT_SECRET ?? "",
 });

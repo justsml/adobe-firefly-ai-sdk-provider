@@ -1,4 +1,4 @@
 {
-  "**/*.{ts,tsx,js,jsx}": ["pnpm -w exec biome check --write"],
-  "*.json": ["pnpm -w exec biome check --write"]
+	"**/*.{ts,tsx,js,jsx}": ["pnpm exec biome check --write"],
+	"*.json": ["pnpm exec biome check --write"]
 }
